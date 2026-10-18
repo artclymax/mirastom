@@ -1,0 +1,74 @@
+@use "../tools" as *;
+
+.contacts {
+	&__container {
+	}
+
+	&__header {
+	}
+
+	&__wrapper {
+		display: flex;
+		gap: 24px;
+		justify-content: space-between;
+		align-items: center;
+
+		@include media($mobile) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__list {
+		@include reset;
+		list-style-type: none;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		flex: 0 1 400px;
+
+		@include media($mobile) {
+			flex: 1 1 100%;
+		}
+	}
+
+	&__item {
+	}
+
+	&__map {
+		flex: 0 1 714px;
+		overflow: hidden;
+		border-radius: adapt(16, 8);
+		height: adapt(400, 190);
+		
+		iframe {
+			border: none;
+		}
+
+		@include media($mobile) {
+			flex: 1 1 100%;
+		}
+	}
+}
+
+.contacts-item {
+	--width: #{adapt(78, 44)};
+	--bg-size: #{adapt(40, 24)};
+	gap: 24px;
+	align-items: flex-start;
+	&::before {
+		background-color: var(--color-blue);
+		border-radius: 50%;
+	}
+	&__wrapper {
+	}
+
+	&__title {
+		font-size: adapt(22, 18);
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__descr {
+	}
+}

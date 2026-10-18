@@ -1,0 +1,44 @@
+@use "../tools" as *;
+
+:root {
+	// Colors
+	--color-0: transparent;
+	--color-black: #000;
+	--color-white: #fff;
+
+	--color-light: #f5fafd;
+	--color-blue: #e3f2f4;
+
+	--color-dark: #111827;
+	--color-dark-2: #223257;
+
+	--color-accent: #0f3693;
+	--color-accent-2: #405a9a;
+	--color-accent-4: #4a7fd0;
+
+	--color-pink: #d48eaa;
+	--color-pink-2: #f5d5e5;
+	--color-brown: #ae928e;
+	--gradient: linear-gradient(180deg, #78a0a3 0%, #6e84a5 100%);
+
+	--color-gray: #6e6e6e;
+
+	--box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0);
+
+	// Layouts
+	--header-height: 188px;
+	--section-padding: #{adapt(120, 40)};
+	--section-padding-05: #{adapt(60, 20)};
+
+	--container-width: 1200px;
+	--container-padding: 10px; //! даже если контейнер на весь экран, отступы оставь а ширину сделай на 100%
+
+	// Fonts
+	--font-size-html: 100%; // 1rem = 1px ===> calc(1 / 16 * 100%)
+	--font-size: #{adapt(18, 16)};
+	--font-family-title: "PlayfairDisplay-VF", "PlayfairDisplay", sans-serif;
+	--font-family-main: "Mulish-VF", "Mulish", sans-serif;
+
+	--line-height: 130%;
+	--letter-spacing: auto;
+}

@@ -1,0 +1,92 @@
+@use "../tools" as *;
+@use "../components/typography" as *;
+
+.about {
+	background-position: top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+	&__container {
+	}
+
+	&__header {
+	}
+
+	&__content {
+		display: flex;
+		gap: adapt(36, 24);
+		align-items: flex-start;
+
+		@include media($mobile) {
+			flex-wrap: wrap-reverse;
+			justify-content: center
+		}
+	}
+
+	&__swiper {
+		flex: 0 1 676px;
+	}
+	&__descr {
+		flex: 0 1 488px;
+		font-size: adapt(22, 18);
+		* {
+			margin-block: 2em;
+			@include media($mobile) {
+				margin-block: 1em;
+			}
+		}
+	}
+
+	&__note {
+		margin-top: adapt(40, 24);
+		strong {
+			@extend .title-3;
+		}
+	}
+}
+
+.about-swiper {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+
+	&__wrapper {
+	}
+
+	&__pagination {
+		margin-top: 24px;
+	}
+
+	&__nav {
+		display: flex;
+		gap: 24px;
+		margin-top: 24px;
+	}
+
+	&__btn {
+	}
+
+	&__btn-prev {
+	}
+
+	&__btn-next {
+	}
+}
+
+.about-slide {
+	&__wrapper-link {
+		border-radius: 8px;
+		overflow: hidden;
+		height: adapt(415, 240);
+
+		img {
+			transition: all 0.3s;
+		}
+
+		@include hover {
+			img {
+				transform: scale(1.05);
+			}
+		}
+	}
+}

@@ -1,0 +1,60 @@
+@use "../tools" as *;
+
+.results {
+	background: linear-gradient(180deg, #f5fafd 0%, #e3f2f4 100%);
+	&__container {
+	}
+
+	&__header {
+	}
+}
+
+.results-swiper {
+	&__nav {
+		display: flex;
+		justify-content: flex-end;
+		gap: 24px;
+		&:not(:last-child) {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__btn {
+	}
+
+	&__btn-prev {
+	}
+
+	&__btn-next {
+	}
+
+	&__wrapper {
+	}
+
+	&__pagination {
+		margin-top: 24px;
+	}
+}
+
+.results-slide {
+	width: 386px !important;
+
+	@include media($mobile) {
+		width: 340px !important;
+	}
+	&__wrapper-link {
+		height: adapt(483, 425);
+		border-radius: 8px;
+		overflow: hidden;
+
+		img {
+			transition: all 0.3s;
+		}
+
+		@include hover {
+			img {
+				transform: scale(1.05);
+			}
+		}
+	}
+}

@@ -1,0 +1,208 @@
+@use "../tools" as *;
+
+.hero {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	&__container {
+		position: relative;
+		padding-top: calc(var(--header-height) + #{adapt(45, 32)});
+		padding-bottom: 152px;
+		@include media($tablet) {
+			padding-bottom: 100px;
+		}
+		@include media($mobile) {
+			padding-bottom: 32px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+	&__body {
+		max-width: 860px;
+
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 32);
+		}
+
+		@include media($laptop-sm) {
+			max-width: adapt(850, 650, $tablet, $laptop-sm);
+		}
+		@include media($tablet) {
+			max-width: adapt(650, 450, $mobile, $tablet);
+		}
+		@include media($mobile) {
+			max-width: 100%;
+		}
+	}
+
+	&__label {
+		@include reset;
+		padding: 9px 12px;
+		font-weight: 300;
+		font-size: adapt(16, 14);
+		background-color: var(--color-light);
+		display: inline-flex;
+		border: 1px solid var(--color-accent-2);
+		border-radius: 4px;
+		box-shadow:
+			0 1px 4px 0 rgba(12, 12, 13, 0.05),
+			0 1px 4px 0 rgba(12, 12, 13, 0.1);
+
+		&:not(:last-child) {
+			margin-bottom: adapt(49, 32);
+		}
+
+		@include media($mobile) {
+			display: flex;
+			text-align: center;
+			justify-content: center;
+		}
+	}
+
+	&__content {
+		position: relative;
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 24);
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			filter: blur(50px);
+			background: var(--color-light);
+			z-index: 1;
+			@include media($mobile) {
+				filter: blur(10px);
+			}
+		}
+	}
+	&__title {
+		position: relative;
+		z-index: 2;
+		color: var(--color-accent-4);
+
+		strong {
+			color: var(--color-pink);
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+
+		@include media($mobile) {
+			text-wrap: balance;
+		}
+	}
+
+	&__descr {
+		position: relative;
+		z-index: 2;
+		font-size: adapt(22, 17);
+		font-weight: 600;
+		font-family: var(--font-family-title);
+	}
+
+	&__btn {
+		position: relative;
+		z-index: 2;
+		max-width: 282px;
+		width: 100%;
+		&:not(:last-child) {
+			margin-bottom: 40px;
+		}
+		@include media($mobile) {
+			display: none;
+		}
+	}
+
+	&__note {
+		@include reset;
+		font-size: adapt(22, 14);
+		font-weight: 600;
+		font-family: var(--font-family-title);
+		max-width: adapt(650, 320);
+
+		@include media($mobile) {
+			font-family: var(--font-family-main);
+			font-weight: 400;
+		}
+	}
+	&__swiper {
+		max-width: 860px;
+		position: relative;
+		z-index: 5;
+		@include media($laptop-sm) {
+			max-width: adapt(850, 650, $tablet, $laptop-sm);
+		}
+		@include media($tablet) {
+			max-width: adapt(650, 450, $mobile, $tablet);
+		}
+		@include media($mobile) {
+			max-width: 100%;
+		}
+	}
+	&__photo {
+		position: absolute;
+		bottom: 0;
+		right: -60px;
+		width: 499px;
+		z-index: 6;
+		padding-bottom: 60%;
+		--object-fit: contain;
+		--object-pos: bottom;
+
+		@include media($tablet-sm) {
+			padding-bottom: 70%;
+		}
+
+		@include media($mobile) {
+			position: relative;
+			padding-bottom: 492px;
+			right: 0;
+			width: 100%;
+			max-width: 499px;
+			margin-bottom: -84px;
+			z-index: 1;
+		}
+	}
+}
+
+.hero-swiper {
+	&__wrapper {
+		& > *:nth-child(odd) {
+			.hero-slide__wrapper {
+				background: var(--color-pink-2);
+			}
+		}
+	}
+}
+
+.hero-slide {
+	width: 258px !important;
+	@include media($mobile) {
+		width: 232px !important;
+	}
+	&__wrapper {
+		padding: 16px 24px;
+		background: var(--color-light);
+		text-align: center;
+		min-height: 100px;
+		border-radius: 4px;
+	}
+
+	&__title {
+		@include reset;
+		color: var(--color-accent);
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__descr {
+	}
+}

@@ -1,0 +1,23 @@
+@use "../tools" as *;
+
+.section-header {
+	text-align: center;
+	font-family: var(--font-family-title);
+	&:not(:last-child) {
+		margin-bottom: adapt(56, 32);
+	}
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 10);
+		}
+	}
+
+	&__descr {
+		font-weight: 600;
+		font-size: adapt(22, 18);
+		color: var(--color-gray);
+		@include media($mobile) {
+			text-align: left;
+		}
+	}
+}

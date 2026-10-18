@@ -1,0 +1,120 @@
+@use "../tools" as *;
+
+.steps {
+	padding-block: var(--section-padding);
+
+	&__container {
+	}
+
+	&__header {
+		* {
+			text-align: center;
+		}
+	}
+
+	&__list {
+		--min: #{adapt(228, 180, $tablet)};
+		--gap: 14px;
+
+		position: relative;
+
+		@include media($mobile-sm) {
+			grid-template-columns: 228px;
+			justify-content: center;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: adapt(104, 66);
+			left: 0;
+			background-color: var(--color-gray);
+			width: 100%;
+			height: 2px;
+
+			@include media($tablet) {
+				display: none;
+			}
+		}
+	}
+
+	&__item {
+	}
+}
+
+.steps-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: adapt(16, 10);
+	text-align: center;
+
+	&__icon {
+		background-color: var(--color-accent-2);
+		width: adapt(78, 44);
+		height: adapt(78, 44);
+		border-radius: 100%;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		img {
+			width: adapt(36, 24);
+			height: adapt(36, 24);
+		}
+	}
+
+	&__step-number {
+		@include reset;
+
+		background-color: #e3f2f4;
+		padding: 4px 19px;
+
+		font-weight: 300;
+		font-size: 12px;
+		line-height: 125%;
+
+		@include media($mobile-sm) {
+			font-weight: 400;
+		}
+	}
+
+	&__title {
+		@include reset;
+
+		font-weight: 400;
+		font-size: adapt(18, 16);
+		max-width: 164px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		gap: 0.1em;
+
+		span {
+			flex-shrink: 0;
+		}
+		@include media($mobile) {
+			flex-direction: row;
+			justify-content: center;
+		}
+		@include media($mobile-sm) {
+			max-width: 100%;
+		}
+	}
+
+	&__text {
+		@include reset;
+
+		color: var(--color-gray);
+		font-weight: 300;
+		font-size: adapt(16, 14);
+
+		@include media($mobile-sm) {
+			font-weight: 400;
+		}
+	}
+}

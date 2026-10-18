@@ -1,0 +1,166 @@
+@use "../tools" as *;
+
+.footer {
+	padding-block: adapt(40, 15) adapt(40, 20);
+	background: var(--color-accent-2);
+	color: var(--color-white);
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: adapt(40, 20);
+	}
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		gap: 24px adapt(24, 16);
+		@include media($mobile) {
+			flex-wrap: wrap;
+			justify-content: flex-start;
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: adapt(24, 10);
+		flex: 0 1 550px;
+		@include media($mobile) {
+			flex: 0 1 50%;
+		}
+		@include media($mobile-sm) {
+			flex: 0 1 193px;
+		}
+	}
+
+	&__logo {
+		width: adapt(283, 166);
+		a {
+			display: inline-flex;
+		}
+	}
+
+	&__descr {
+		max-width: 180px;
+		font-size: rem(12);
+		font-weight: 200;
+
+		@include media($mobile) {
+			font-size: rem(14);
+			font-weight: 400;
+		}
+	}
+
+	&__menu {
+		flex: 0 1 320px;
+		@include media($mobile) {
+			margin-top: 55px;
+			flex: 0 1 130px;
+		}
+	}
+
+	&__title {
+		color: inherit;
+		font-size: adapt(22, 18);
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__contacts {
+		flex: 0 1 480px;
+	}
+
+	&__contacts-list {
+		@include reset;
+		list-style-type: none;
+		display: flex;
+		gap: 16px;
+		flex-direction: column;
+	}
+
+	&__contacts-item {
+	}
+
+	&__bottom {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: adapt(24, 10);
+	}
+
+	&__copy {
+		display: block;
+		font-size: adapt(16, 14);
+		font-style: normal;
+		font-weight: 200;
+		text-align: center;
+
+		@include media($mobile) {
+			font-weight: 400;
+		}
+	}
+
+	&__links {
+		font-weight: 200;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		align-items: center;
+		font-size: adapt(16, 14);
+		@include media($mobile) {
+			font-weight: 400;
+		}
+	}
+
+	&__link {
+		text-align: center;
+		display: inline-flex;
+		@include hoverLine(slide, var(--color-white), 1px);
+	}
+}
+
+.footer-menu {
+	ul {
+		@include reset;
+		list-style-type: none;
+		display: flex;
+		flex-direction: column;
+		gap: adapt(16, 10);
+	}
+
+	a {
+		display: inline-flex;
+		color: inherit;
+		text-decoration: none;
+		@include hoverLine(slide, var(--color-white), 2px);
+	}
+}
+
+.footer-contacts-item {
+	--width: 30px;
+	align-items: flex-start;
+	gap: 24px;
+
+	&__wrapper {
+	}
+
+	&__descr {
+	}
+
+	&__btn {
+		//max-width: 300px;
+		width: 100%;
+
+		@include media($mobile, min) {
+			max-width: 300px;
+		}
+	}
+	.link {
+		@include hoverLine(slide, var(--color-white), 2px);
+	}
+	.messengers__link {
+		@include square(32px);
+	}
+}

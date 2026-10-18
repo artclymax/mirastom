@@ -1,0 +1,22 @@
+@use "../tools" as *;
+
+.messengers {
+	@include reset;
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+
+	&__item {
+	}
+
+	&__link {
+		display: inline-flex;
+		@include square(44px);
+		transition: all 0.3s;
+
+		@include hover {
+			opacity: 0.7;
+		}
+	}
+}

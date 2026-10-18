@@ -1,0 +1,61 @@
+@use "../tools" as *;
+
+.why {
+	padding-block: var(--section-padding);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	&__container {
+	}
+
+	&__header {
+	}
+
+	&__list {
+		--gap: #{adapt(24, 10)};
+	}
+
+	&__item {
+	}
+}
+
+.section-header {
+	&__title {
+	}
+
+	&__descr {
+	}
+}
+.services-item {
+	&__header {
+	}
+
+	&__icon {
+	}
+
+	&__title {
+	}
+
+	&__descr {
+	}
+}
+.why-item {
+	&:nth-child(even) {
+		background-color: var(--color-pink-2);
+		color: var(--color-dark);
+		.services-item__title {
+			color: var(--color-dark);
+		}
+	}
+	background-color: var(--color-accent-2);
+	color: var(--color-light);
+	padding: adapt(24, 16) adapt(28, 16);
+	min-height: auto;
+	.services-item__title {
+		color: var(--color-light);
+	}
+	.services-item__icon {
+		@include square(40px);
+	}
+}

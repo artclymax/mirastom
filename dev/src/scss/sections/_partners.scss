@@ -1,0 +1,25 @@
+@use "../tools" as *;
+
+.partners {
+	&__container {
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 20);
+		}
+	}
+
+	&__header {
+	}
+
+	&__running-line {
+		--running-line-gap: #{adapt(63, 10)};
+		--running-line-speed: 60s;
+
+		.running-line__item {
+			width: 374px;
+
+			@include media($mobile) {
+				width: 140px;
+			}
+		}
+	}
+}

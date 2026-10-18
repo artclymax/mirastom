@@ -1,0 +1,53 @@
+@use "../tools" as *;
+
+.page-404 {
+	padding-top: calc(var(--header-height) + #{adapt(80, 40)});
+	padding-bottom: adapt(120, 40);
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(20, 10);
+		}
+	}
+
+	&__descr {
+		max-width: 717px;
+		margin: 0 auto;
+		&:not(:last-child) {
+			margin-bottom: 40px;
+		}
+		@include media($mobile-sm) {
+			font-family: var(--font-family-main);
+			font-weight: 400;
+			font-size: 1rem;
+		}
+	}
+
+	&__btn {
+		max-width: 340px;
+		width: 100%;
+
+		@include media($mobile-sm) {
+			max-width: 100%;
+		}
+	}
+}
+.jarallax {
+}
+.container {
+}
+.title-1 {
+}
+.descr {
+}
+.title-3 {
+}
+.btn {
+}
